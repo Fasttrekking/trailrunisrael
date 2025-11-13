@@ -1,38 +1,72 @@
 # הגדרות בסיסיות
-title: Trail Run Israel
-description: Your guide to trail running and outdoor adventures in Israel
-url: "https://trairunisrael.github.io"
-baseurl: ""
-
-# מחבר
-author:
-  name: Trail Run Israel
-  email: your-email@example.com
+title: "Trail Run Israel"
+title_separator: "|"
+subtitle: "Adventure Awaits"
+name: "Ety Frisch"
+description: "Your guide to trail running and outdoor adventures in Israel"
+url: "https://fasttrekking.github.io"
+baseurl: "/trailrunisrael"
+repository: "Fasttrekking/trailrunisrael"
 
 # תבנית
-theme: minima
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+minimal_mistakes_skin: "default" # נשנה את זה אחר כך לסגנון מותאם
 
-# פרמלינק
-permalink: /:year/:month/:day/:title/
+# הגדרות מחבר
+author:
+  name: "Ety Frisch"
+  avatar: "/assets/images/bio-photo.jpg" # נוסיף תמונה אחר כך
+  bio: "Trail runner, outdoor enthusiast, adventure seeker"
+  location: "Israel"
+  links:
+    - label: "Instagram"
+      icon: "fab fa-fw fa-instagram"
+      url: "https://instagram.com/trailrunisrael"
+    - label: "Facebook"
+      icon: "fab fa-fw fa-facebook-square"
+      url: "https://facebook.com/trailrunisrael"
 
-# Pagination
-paginate: 6
-paginate_path: "/page:num/"
+# הגדרות פוסטים
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: false
+      share: true
+      related: true
+      show_date: true
+      header:
+        overlay_filter: 0.5
 
-# הגדרות נוספות
-timezone: Asia/Jerusalem
-lang: he
-
-# Social
-social:
-  - title: instagram
-    url: https://instagram.com/trairunisrael
-  - title: facebook  
-    url: https://facebook.com/trairunisrael
-
-# Build settings
-markdown: kramdown
+# פלאגינים
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-include-cache
+
+# SEO
+locale: "en-US"
+timezone: Asia/Jerusalem
+
+# פרמלינק
+permalink: /:categories/:title/
+paginate: 9
+paginate_path: /page:num/
+
+# הגדרות חיפוש
+search: true
+
+# קטגוריות
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
